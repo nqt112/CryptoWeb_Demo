@@ -1,3 +1,7 @@
+const newsContainer = document.getElementById('news-container');
+let articlesLoaded = 0;
+const articlesPerPage = 6;
+const loadMoreButton = document.getElementById('load-more-button');
 const businessButton = document.getElementById('business');
 const enterButton = document.getElementById('entertainment');
 const generalButton = document.getElementById('general');
@@ -5,10 +9,6 @@ const healthButton = document.getElementById('health');
 const sportsButton = document.getElementById('sports');
 const techButton = document.getElementById('technology');
 
-const newsContainer = document.getElementById('news-container');
-let articlesLoaded = 0;
-const articlesPerPage = 6;
-const loadMoreButton = document.getElementById('load-more-button');
 // Show all category buttons
   
 businessButton.addEventListener('click', () => {
@@ -66,7 +66,9 @@ function loadArticlesByCategory(category) {
         });
   
         // Hide Load more button if all articles have been loaded
-    
+        if (articlesLoaded >= data.articles.length) {
+          loadMoreButton.style.display = 'none';
+        }
       });
   }
 

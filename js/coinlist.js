@@ -139,7 +139,7 @@ const tableBody = document.getElementById('coin-data');
                           })
                           .catch((error) => console.log(error));
                       }
-                      const viewAllButton = document.getElementById('view-all-button');
+  const viewAllButton = document.getElementById('view-all-button');
 
 viewAllButton.addEventListener('click', () => {
   fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1')
